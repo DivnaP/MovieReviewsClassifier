@@ -18,7 +18,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 
 import com.google.gson.Gson;
 
-import gui.Pocetna;
+import gui.MainFrame;
 
 
 import klase.Classifier;

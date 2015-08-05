@@ -15,6 +15,6 @@
 	<classpathentry kind="lib" path="C:/Users/Divna/Desktop/biblioteke/itext/itext-pdfa-5.5.6.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Divna/Desktop/biblioteke/itext/itext-xtra-5.5.6.jar"/>
 	<classpathentry kind="lib" path="/Test2/.settings"/>
-	<classpathentry kind="lib" path="/Lab 3/libs/weka.jar" sourcepath="/Lab 3/libs/weka-src.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Divna/workspace/Test/lib/weka.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

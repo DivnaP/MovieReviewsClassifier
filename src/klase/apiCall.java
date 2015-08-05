@@ -18,12 +18,12 @@ import org.apache.http.impl.client.DefaultHttpClient;
 
 import com.google.gson.Gson;
 
-import gui.Pocetna;
+import gui.MainFrame;
 public class apiCall extends Thread{
 	private volatile String result;
 	 String text=null;
-	 Pocetna p;
-	public apiCall(String text, Pocetna p) {
+	 MainFrame p;
+	public apiCall(String text, MainFrame p) {
 		this.text=text;
 		this.p=p;
 	}
