@@ -21,7 +21,7 @@ import com.google.gson.Gson;
 import rs.fon.is.movieClassification.classification.Classifier;
 import rs.fon.is.movieClassification.classification.Trainer;
 import rs.fon.is.movieClassification.classification.swn.SentiWordNetDemo;
-import rs.fon.is.movieClassification.domain.PositiveNegativeSentence;
+import rs.fon.is.movieClassification.domain.Sentences;
 import rs.fon.is.movieClassification.pdf.TextToPdfConverter;
 import rs.fon.is.movieClassification.gui.MainFrame;;
 

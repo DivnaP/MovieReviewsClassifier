@@ -34,7 +34,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import com.google.gson.Gson;
 
 import rs.fon.is.movieClassification.broker.Broker;
-import rs.fon.is.movieClassification.domain.PositiveNegativeSentence;
+import rs.fon.is.movieClassification.domain.Sentences;
 
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
@@ -636,8 +636,8 @@ public class MainFrame extends JFrame {
 
 				}
 
-				final PositiveNegativeSentence results = new Gson().fromJson(builder.toString(),
-						PositiveNegativeSentence.class);
+				final Sentences results = new Gson().fromJson(builder.toString(),
+						Sentences.class);
 				result = results.toString();
 				System.out.println(results);
 				MainFrame.this.textArea.setText(result);
