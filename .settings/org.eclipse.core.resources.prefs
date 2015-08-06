@@ -1,5 +1,5 @@
 eclipse.preferences.version=1
-encoding//src/gui/MainFrame.java=UTF-8
-encoding//src/klase/Classifier.java=UTF-8
-encoding//src/klase/DetailSentence.java=UTF-8
-encoding//src/swn/classification/SentiWordNetDemo.java=UTF-8
+encoding//src/rs/fon/is/movieClassification/classification/Classifier.java=UTF-8
+encoding//src/rs/fon/is/movieClassification/classification/swn/SentiWordNetDemo.java=UTF-8
+encoding//src/rs/fon/is/movieClassification/domain/DetailSentence.java=UTF-8
+encoding//src/rs/fon/is/movieClassification/gui/MainFrame.java=UTF-8

@@ -2,19 +2,18 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
-	<classpathentry kind="lib" path="C:/Users/Divna/Desktop/httpcomponents-client-4.5/lib/httpclient-4.5.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Divna/Desktop/httpcomponents-client-4.5/lib/httpcore-4.4.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Divna/Desktop/commons-logging-1.2/commons-logging-1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Divna/Downloads/gson-2.3.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Divna/Desktop/biblioteke/apache-httpcomponents-httpclient.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Divna/Desktop/biblioteke/javax.ws.rs.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Divna/Desktop/biblioteke/javax.ws.rs-api-2.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Divna/Desktop/biblioteke/libsvm.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Divna/Desktop/biblioteke/wlsvm.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Divna/Desktop/biblioteke/itext/itextpdf-5.5.6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Divna/Desktop/biblioteke/itext/itext-pdfa-5.5.6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Divna/Desktop/biblioteke/itext/itext-xtra-5.5.6.jar"/>
-	<classpathentry kind="lib" path="/Test2/.settings"/>
-	<classpathentry kind="lib" path="C:/Users/Divna/workspace/Test/lib/weka.jar"/>
+	<classpathentry kind="lib" path="lib/apache-httpcomponents-httpclient.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/gson-2.3.1.jar"/>
+	<classpathentry kind="lib" path="lib/httpclient-4.5.jar"/>
+	<classpathentry kind="lib" path="lib/httpcore-4.4.1.jar"/>
+	<classpathentry kind="lib" path="lib/itext-pdfa-5.5.6.jar"/>
+	<classpathentry kind="lib" path="lib/itext-xtra-5.5.6.jar"/>
+	<classpathentry kind="lib" path="lib/itextpdf-5.5.6.jar"/>
+	<classpathentry kind="lib" path="lib/javax.ws.rs-api-2.0.jar"/>
+	<classpathentry kind="lib" path="lib/javax.ws.rs.jar"/>
+	<classpathentry kind="lib" path="lib/libsvm.jar"/>
+	<classpathentry kind="lib" path="lib/weka.jar"/>
+	<classpathentry kind="lib" path="lib/wlsvm.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
