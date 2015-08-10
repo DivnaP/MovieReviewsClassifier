@@ -50,9 +50,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
-import java.net.URL;
+
 import java.awt.event.ActionEvent;
-import javax.swing.border.BevelBorder;
+
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.SwingConstants;
@@ -60,9 +60,9 @@ import java.awt.Toolkit;
 import java.awt.Component;
 import javax.swing.Box;
 import javax.swing.Icon;
-import javax.swing.JPopupMenu;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+
+
+
 
 public class MainFrame extends JFrame {
 
@@ -511,7 +511,7 @@ public class MainFrame extends JFrame {
 							FileWriter fw;
 							try {
 
-								fw = new FileWriter("data/kritika.txt", false);
+								fw = new FileWriter("data/review.txt", false);
 								textArea.write(fw);
 							} catch (IOException e) {
 
@@ -520,12 +520,12 @@ public class MainFrame extends JFrame {
 							}
 
 							if (klasifikator.contains("+HP")) {
-								text = Broker.getInstance().load("data/kritika.txt");
+								text = Broker.getInstance().load("data/review.txt");
 
 								Thread reg = new Thread(qoueryIDOL);
 								reg.start();
 							} else
-								return Broker.getInstance().analyze("data/kritika.txt", klasifikator);
+								return Broker.getInstance().analyze("data/review.txt", klasifikator);
 
 						}
 

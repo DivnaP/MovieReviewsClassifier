@@ -116,7 +116,7 @@ public class Trainer {
 			switch (typeClassifier) {
 			case "nb":
 				classifier.setClassifier(new NaiveBayesMultinomial());
-				forGUI += "\n ===== Training with classifier Naive Bayes Multinominal=====";
+				forGUI += "\n ===== Training with classifier Naive Bayes Multinomial=====";
 				break;
 			case "j48":
 				classifier.setClassifier(new J48());
@@ -170,22 +170,19 @@ public class Trainer {
 
 	}
 
-	public static String main(String[] args) {
+	public String train(String file, String type) {
 
 		Trainer learner = null;
-		if (args.length < 1)
-			System.out.println("Missing arguments <fileData> <fileModel>");
-		else {
-
+		
 			learner = new Trainer();
-			learner.loadDataset(args[0]);
-			String typeClassifier = args[1];
+			learner.loadDataset(file);
+			String typeClassifier = type;
 			learner.evaluate(typeClassifier);
 			learner.learn(typeClassifier);
 			learner.saveModel("data/model.txt");
 
 		
-		}
+		
 		return learner.returnResult();
 	}
 }

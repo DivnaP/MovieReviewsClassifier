@@ -123,23 +123,21 @@ import java.io.*;
 		
 	}
 	
-	public static String main (String[] args) {
+	public  String classification (String fileData,String fileModel) {
 	
 		Classifier classifier=null;
 		
-		if (args.length < 2)
-			System.out.println("Missing arguments <fileData> <fileModel>");
-		else {
+	
 		
 			classifier = new Classifier();
-			classifier.load(args[0]);
-			classifier.loadModel(args[1]);
+			classifier.load(fileData);
+			classifier.loadModel(fileModel);
 		
 			classifier.makeInstance();
 			classifier.classify();
 			
 			
-		}
+		
 		return classifier.returnResult();
 	}
 	

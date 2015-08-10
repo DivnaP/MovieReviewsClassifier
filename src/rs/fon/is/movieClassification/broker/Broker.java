@@ -42,14 +42,17 @@ public class Broker {
 
 	public String analyze(String file, String type) {
 
-		if (type.equals("nb"))
-
-			return Classifier.main(new String[] { file, "data/model.txt" });
+		if (type.equals("nb")) {
+			
+			Classifier c = new Classifier();
+			return c.classification(file, "data/model.txt");
+		}
 
 		else if (type.contains("SWN"))
-
-			return SentiWordNetDemo.main(new String[] { file });
-
+		{
+			SentiWordNetDemo swd = new SentiWordNetDemo();
+			return swd.classification(file);
+		}
 		else {
 
 			return "";
@@ -59,15 +62,22 @@ public class Broker {
 
 	public String train(String type) {
 
-		File file = new File("data/kritikeSve3.arff");
+		File file = new File("data/movieReviews.arff");
 
-		return Trainer.main(new String[] { file.getPath(), type });
+		Trainer tr = new Trainer();
+		return tr.train(file.getPath(), type);
 
 	}
 
 	public void createPDF(String text) throws Exception {
 
-		TextToPdfConverter.main(new String[] { text });
+		TextToPdfConverter pdf = new TextToPdfConverter(text);
+
+		if (pdf.convertTextToPDF()) {
+			System.out.println("Text file successfully converted to PDF");
+
+		}
+
 		if (Desktop.isDesktopSupported()) {
 			try {
 				File myFile = new File("data/report.pdf");

@@ -133,8 +133,8 @@ public class SentiWordNetDemo {
 		}
 	
 		if (count >= 0) 
-			return "pozitivna";
-		else return "negativna";
+			return "positive";
+		else return "negative";
 	}
 	
 	
@@ -244,8 +244,8 @@ public class SentiWordNetDemo {
 		}
 		
 		if (count > 0) 
-			return "pozitivna";
-		else return "negativna";
+			return "positive";
+		else return "negative";
 	}
 	
 
@@ -336,8 +336,8 @@ public class SentiWordNetDemo {
 		}
 	
 		if (count > 0) 
-			return "pozitivna";
-		else return "negativna";
+			return "positive";
+		else return "negative";
 	}
 
 	public String classifyADJY() {
@@ -387,8 +387,8 @@ public class SentiWordNetDemo {
 		}
 		// Returns "yes" in case of 0
 		if (count >= 0) 
-			return "pozitivna";
-		else return "negativna";
+			return "positive";
+		else return "negative";
 	}
 	
 	
@@ -441,8 +441,8 @@ public class SentiWordNetDemo {
 		}
 	
 		if (count >= 0) 
-			return "pozitivna";
-		else return "negativna";
+			return "positive";
+		else return "negative";
 	}
 	
 	
@@ -495,20 +495,18 @@ public class SentiWordNetDemo {
 		}
 		
 		if (count > 0) 
-			return "pozitivna";
-		else return "negativna";
+			return "positive";
+		else return "negative";
 	}
  
 	
-	public static String main (String[] args) {
+	public  String classification (String file) {
 		SentiWordNetDemo classifier = null;
-		if (args.length < 1)
-			System.out.println("Usage: java SentiWordNetDemo <file>");
-		else {
+	
 		
 		
 			classifier = new SentiWordNetDemo();
-			classifier.load(args[0]);
+			classifier.load(file);
 			
 		System.out.println(classifier.classifyAllPOSY());
 			System.out.println(classifier.classifyAllPOSN());
@@ -516,7 +514,7 @@ public class SentiWordNetDemo {
 			System.out.println(classifier.classifyADJY());
 			System.out.println(classifier.classifyADJN());	
 			
-		}
+		
 		return "===== Classification by all kinds of words ===== \n\n"+" Review is classified as : "+classifier.classifyAllPOSY()+ "\n\n"+
 		"===== Classification by adjectives ===== \n\n"+" Review is classified as : "+classifier.classifyAllPOSY()
 		+"\n\n ===== Classification by nouns ===== \n\n"+" Review is classified as : "+classifier.classifyNounN();

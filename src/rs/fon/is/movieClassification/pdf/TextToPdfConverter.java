@@ -13,20 +13,16 @@ import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 
 public class TextToPdfConverter {
+	private File file;
+	private static String text;
 
-	public static void main(String[] args) throws Exception {
-
-		File file = new File("data/kritika.txt");
-		String tekst = args[0];
-
-		if (convertTextToPDF(tekst)) {
-			System.out.println("Text file successfully converted to PDF");
-
-		}
+	public TextToPdfConverter(String text) {
+		file = new File("data/review.txt");
+		this.text = text;
 
 	}
 
-	public static boolean convertTextToPDF(String file) throws Exception {
+	public boolean convertTextToPDF() throws Exception {
 
 		FileInputStream fis = null;
 		DataInputStream in = null;
@@ -62,7 +58,7 @@ public class TextToPdfConverter {
 			para.setAlignment(Element.ALIGN_CENTER);
 			pdfDoc.add(para);
 
-			para = new Paragraph(file + "\n", myfont);
+			para = new Paragraph(text + "\n", myfont);
 			para.setAlignment(Element.ALIGN_JUSTIFIED);
 			pdfDoc.add(para);
 			pdfDoc.close();
