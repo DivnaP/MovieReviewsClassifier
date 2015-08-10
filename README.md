@@ -1,15 +1,14 @@
 
 # 1. About the project
 The aim of this project is to experiment with different machine learning algorithms to predict the sentiment of movie reviews. For start we collect movie reviews from database on the website [www.www.cs.cornell.edu](http://www.cs.cornell.edu/people/pabo/movie-review-data) and use that data to create dataset file and predict sentiment of specific movie review.
-The project uses five different types of prediction models :<br>
-- Linear Regression <br>
-- Support Vector Machine<br>
-- Naive Bayes Multinomial<br>
-- J48 Decision tree<br>
-- Sequential Minimal Optimization<br>
-
- Results of the five prediction models are compared in order to find out which method is more suitable for this type of prediction. 
- Beside those five models, aplication provide analyzing of words ih movie reviews using [SentiWordNet](http://sentiwordnet.isti.cnr.it/) lexical resource. Also user have ability to use  [HP IDOL OnDemand](https://www.idolondemand.com/developer/apis/analyzesentiment#overview) Web service which analyzes text and return the sentiment as positive, negative or neutral. It contains a dictionary of positive and negative words of different types, and defines patterns that describe how to combine these words to form positive and negative phrases.
+The project uses five different types of prediction models : <br>
+- Logistic Regression
+- Support Vector Machine
+- Naive Bayes Multinomial
+- J48 Decision tree
+- Sequential Minimal Optimization
+Results of the five prediction models are compared in order to find out which method is more suitable for this type of prediction. 
+Beside those five models, aplication provide analyzing of words ih movie reviews using [SentiWordNet](http://sentiwordnet.isti.cnr.it/) lexical resource. Also user have ability to use  [HP IDOL OnDemand](https://www.idolondemand.com/developer/apis/analyzesentiment#overview) Web service which analyzes text and return the sentiment as positive, negative or neutral. It contains a dictionary of positive and negative words of different types, and defines patterns that describe how to combine these words to form positive and negative phrases.
 
 
 # 2. Machine learning algorithms used in project
@@ -25,7 +24,7 @@ The project uses five different types of prediction models :<br>
  *J48 Decision tree* is a predictive machine-learning model that decides the target value (dependent variable) of a new sample based on various attribute values of the available data.[3]
 
 *SENTIWORDNET 3.0* is a lexical resource explicitly devised for supporting sentiment classification and opinion
-mining applications. SENTIWORDNET is the result of the automatic annotationof all the synsets of WORDNET according to the notions of “positivity”, “negativity”, and “neutrality”. Each synset s is associated to three numerical scores P os(s), Neg(s), and Obj(s) which indicate how positive, negative, and “objective” (i.e., neutral) the terms contained in the synset are. Different senses of the same term may thus have different opinion-related propertie
+mining applications. SentiWordNet is the result of the automatic annotationof all the synsets of WORDNET according to the notions of “positivity”, “negativity”, and “neutrality”. Each synset s is associated to three numerical scores P os(s), Neg(s), and Obj(s) which indicate how positive, negative, and “objective” (i.e., neutral) the terms contained in the synset are. Different senses of the same term may thus have different opinion-related propertie.
 
 # 3. Dataset
 
