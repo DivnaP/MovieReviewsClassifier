@@ -9,7 +9,7 @@ The project uses five different types of prediction models :
 -Sequential Minimal Optimization
 
  Results of the five prediction models are compared in order to find out which method is more suitable for this type of prediction. 
- Beside those five models, aplication provide analyze of words ih movie reviews using [http://sentiwordnet.isti.cnr.it/](SentiWordNet) lexical resource. Also user have ability to use  [https://www.idolondemand.com/developer/apis/analyzesentiment#overview](HP IDOL OnDemand) Web service which analyzes text and return the sentiment as positive, negative or neutral. It contains a dictionary of positive and negative words of different types, and defines patterns that describe how to combine these words to form positive and negative phrases.
+ Beside those five models, aplication provide analyzing of words ih movie reviews using [SentiWordNet](http://sentiwordnet.isti.cnr.it/) lexical resource. Also user have ability to use  [https://www.idolondemand.com/developer/apis/analyzesentiment#overview](HP IDOL OnDemand) Web service which analyzes text and return the sentiment as positive, negative or neutral. It contains a dictionary of positive and negative words of different types, and defines patterns that describe how to combine these words to form positive and negative phrases.
 
 
 # 2. Machine learning algorithms used in project
@@ -59,7 +59,7 @@ We have results for 5 different algorithms which are performed on dataset movieR
 # 6. References
 
 [1] Wikipedia, "Logistic_regression", link:https://en.wikipedia.org/wiki/Logistic_regression, last access: 08.10.2015. <br>
-[2] Wikipedia,"Sequential_minimal_optimization", link:https://en.wikipedia.org/wiki/Sequential_minimal_optimization,last access: 08.10.2015.<br>
-[3] UniversityOfMinnesotaDuluth, "Chapter 5",link:http://www.d.umn.edu/~padhy005/Chapter5.html,last access: 08.10.2015. <br>
+[2] Wikipedia, "Sequential_minimal_optimization", link:https://en.wikipedia.org/wiki/Sequential_minimal_optimization, last access: 08.10.2015.<br>
+[3] UniversityOfMinnesotaDuluth, "Chapter 5", link:http://www.d.umn.edu/~padhy005/Chapter5.html,last access: 08.10.2015. <br>
 [4] Paul Paisitkriangkrai, "Linear Regression and Support Vector Regression", 2012, link:
 http://cs.adelaide.edu.au/~chhshen/teaching/ML_SVR.pdf, last access: 10.07.2015. <br>
