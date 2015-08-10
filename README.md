@@ -51,9 +51,9 @@ In this project five Weka classes were used: *NaiveBayesMultinomial*,*J48*,*LibS
 ![Alt text](/images/table1.jpg?raw=true "Classification results")
 We have results for 5 different algorithms which are performed on dataset movieReviews.arff. As we see best precision have Sequential minimal optimization algorithm, and also has best result in recall. After him, best result provides Naive Bayes Multinomial. We have pretty good results but in some cases while testing, application was unable to correctly classify obvious sentiment of movie review. But when we use another methods for analyzing sentiment of movie review like SentiWordNet and IDOLONDemand service we have different results.
 
-![Alt text](/images/classificationResult1.jpg?raw=true "Classification result when using classification based on training with SMO ")
-![Alt text](/images/classificationResult2.jpg?raw=true "Classification result when using SentiWordNet")
-![Alt text](/images/classificationResult3.jpg?raw=true "Classification result when using HPIDOLOnDemand")
+![Alt text](/images/ClassificationResult1.jpg?raw=true "Classification result when using classification based on training with SMO ")
+![Alt text](/images/ClassificationResult2.jpg?raw=true "Classification result when using SentiWordNet")
+![Alt text](/images/ClassificationResult3.jpg?raw=true "Classification result when using HPIDOLOnDemand")
 
 
 # 6. References
