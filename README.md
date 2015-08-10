@@ -6,7 +6,7 @@ The project uses five different types of prediction models : <br>
 - Support Vector Machine
 - Naive Bayes Multinomial
 - J48 Decision tree
-- Sequential Minimal Optimization
+- Sequential Minimal Optimization<br>
 Results of the five prediction models are compared in order to find out which method is more suitable for this type of prediction. 
 Beside those five models, aplication provide analyzing of words ih movie reviews using [SentiWordNet](http://sentiwordnet.isti.cnr.it/) lexical resource. Also user have ability to use  [HP IDOL OnDemand](https://www.idolondemand.com/developer/apis/analyzesentiment#overview) Web service which analyzes text and return the sentiment as positive, negative or neutral. It contains a dictionary of positive and negative words of different types, and defines patterns that describe how to combine these words to form positive and negative phrases.
 
@@ -21,18 +21,24 @@ Beside those five models, aplication provide analyzing of words ih movie reviews
 
 *Sequential minimal optimization (SMO)* is an algorithm for solving the quadratic programming problem that arises during the training of support vector machines.[2] 
 
- *J48 Decision tree* is a predictive machine-learning model that decides the target value (dependent variable) of a new sample based on various attribute values of the available data.[3]
+*J48 Decision tree* is a predictive machine-learning model that decides the target value (dependent variable) of a new sample based on various attribute values of the available data.[3]
 
 *SENTIWORDNET 3.0* is a lexical resource explicitly devised for supporting sentiment classification and opinion
 mining applications. SentiWordNet is the result of the automatic annotationof all the synsets of WORDNET according to the notions of “positivity”, “negativity”, and “neutrality”. Each synset s is associated to three numerical scores P os(s), Neg(s), and Obj(s) which indicate how positive, negative, and “objective” (i.e., neutral) the terms contained in the synset are. Different senses of the same term may thus have different opinion-related propertie.
+# 3. 
+## Creating dataset
 
-# 3. Dataset
+Data used in this project is collected from the website [www.www.cs.cornell.edu](http://www.cs.cornell.edu/people/pabo/movie-review-data). For the purpose of this project we used  [polarity_dataset v2.0](http://www.cs.cornell.edu/People/pabo/movie-review-data/review_polarity.tar.gz). All data from this database are sorted in two folders pos and neg, which represent positive and negative reviews. All reviews from .txt files from these two folders are programmatically stored in file ["data/movieReviews.arff"](https://github.com/DivnaP/MovieReviewsClassifier/blob/master/data/movieReviews.arff) with the help of class ["InsertReviewsToARFF.java"](https://github.com/DivnaP/MovieReviewsClassifier/blob/master/src/rs/fon/is/movieClassification/util/InsertReviewsToARFF.java). Some of movie reviews are manually added from [www.metacritic.com](http://www.metacritic.com/) and then, in total, 2158 movie reviews collected.
 
-Data used in this project is collected from the website [www.www.cs.cornell.edu](http://www.cs.cornell.edu/people/pabo/movie-review-data) . For the purpose of this project we used  [polarity_dataset v2.0](http://www.cs.cornell.edu/People/pabo/movie-review-data/review_polarity.tar.gz). All gathered data are programmatically stored in file ["data/movieReviews.arff"](https://github.com/DivnaP/MovieReviewsClassifier/blob/master/data/movieReviews.arff). Some of movie reviews are manually added from  [www.metacritic.com](http://www.metacritic.com/) and then in total, 2158 movie reviews collected.
-
-
+## Train dataset and testing
+User can perform training on dataset selecting one of the five classifiers. After that user can see results of training on screen and he can load or enter review for classification.
+![Alt text](/images/formTraining1.jpg?raw=true "Chooseing classifier")
+![Alt text](/images/formTraining2.jpg?raw=true "Results of training")
+When algorithm learn we applying StringToWordVector with filter stopwords from file ["data/stopWords2.txt"](https://github.com/DivnaP/MovieReviewsClassifier/blob/master/data/stopWords2.txt) which represent list of words that we won't to analyze because there are irelevant for our classification.
+![Alt text](/images/stopWordsCode.jpg?raw=true "Filter Stopwords")
 # 4. Technical realization
-The application is written in Java, with next libraries:<br>
+
+The application is written in Java programming language, with help of next libraries:<br>
 - [Weka library](http://www.cs.waikato.ac.nz/ml/weka/)- Weka is a popular suite of machine learning software written in Java, developed at the University of Waikato, New Zealand. All algorithms that software provide can be used directly from code by importing *weka.jar* file. Weka contains tools for data preprocessing, classification, regression, clustering and visualization.
 
 In this project five Weka classes were used: *NaiveBayesMultinomial*,*J48*,*LibSVM*,*Logistic*,*SMO*.
@@ -48,7 +54,7 @@ In this project five Weka classes were used: *NaiveBayesMultinomial*,*J48*,*LibS
 
 
 ![Alt text](/images/table1.jpg?raw=true "Classification results")
-We have results for 5 different algorithms which are performed on dataset movieReviews.arff. As we see best precision have Sequential minimal optimization algorithm, and also has best result in recall. After him, best result provides Naive Bayes Multinomial. We have pretty good results but in some cases while testing, application was unable to correctly classify obvious sentiment of movie review. But when we use another methods for analyzing sentiment of movie review like SentiWordNet and IDOLONDemand service we have different results.
+We have results for 5 different algorithms which are performed on dataset movieReviews.arff. As we see best precision have Sequential minimal optimization algorithm, and also has best result in recall. After him, best result provides Naive Bayes Multinomial. We have pretty good results but in some cases while testing, application was unable to correctly classify obvious sentiment of movie review, also when we use another methods for analyzing sentiment of movie review like SentiWordNet and IDOLONDemand service we have different results.
 
 ![Alt text](/images/ClassificationResult1.jpg?raw=true "Classification result when using classification based on training with SMO ")
 ![Alt text](/images/ClassificationResult2.jpg?raw=true "Classification result when using SentiWordNet")

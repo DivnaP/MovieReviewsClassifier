@@ -116,7 +116,7 @@ public class InsertReviewsToARFF extends JFrame {
 		
 		BufferedWriter bufferedWriter;
 		try {
-			bufferedWriter = new BufferedWriter(new FileWriter("data/kritikeSve.arff", true));
+			bufferedWriter = new BufferedWriter(new FileWriter("data/movieReviews.arff", true));
 
 			bufferedWriter.write(classReview);
 			bufferedWriter.write(text + "'");
