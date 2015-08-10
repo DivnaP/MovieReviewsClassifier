@@ -1,15 +1,15 @@
 
 # 1. About the project
 The aim of this project is to experiment with different machine learning algorithms to predict the sentiment of movie reviews. For start we collect movie reviews from database on the website [http://www.cs.cornell.edu/people/pabo/movie-review-data](www.www.cs.cornell.edu) and use that data to create dataset file and predict sentiment of specific movie review.
-The project uses five different types of prediction models :
--Linear Regression 
--Support Vector Machine
--Naive Bayes Multinomial
--J48 Decision tree
--Sequential Minimal Optimization
+The project uses five different types of prediction models :<br>
+-Linear Regression <br>
+-Support Vector Machine<br>
+-Naive Bayes Multinomial<br>
+-J48 Decision tree<br>
+-Sequential Minimal Optimization<br>
 
  Results of the five prediction models are compared in order to find out which method is more suitable for this type of prediction. 
- Beside those five models, aplication provide analyzing of words ih movie reviews using [SentiWordNet](http://sentiwordnet.isti.cnr.it/) lexical resource. Also user have ability to use  [https://www.idolondemand.com/developer/apis/analyzesentiment#overview](HP IDOL OnDemand) Web service which analyzes text and return the sentiment as positive, negative or neutral. It contains a dictionary of positive and negative words of different types, and defines patterns that describe how to combine these words to form positive and negative phrases.
+ Beside those five models, aplication provide analyzing of words ih movie reviews using [SentiWordNet](http://sentiwordnet.isti.cnr.it/) lexical resource. Also user have ability to use  [HP IDOL OnDemand](https://www.idolondemand.com/developer/apis/analyzesentiment#overview) Web service which analyzes text and return the sentiment as positive, negative or neutral. It contains a dictionary of positive and negative words of different types, and defines patterns that describe how to combine these words to form positive and negative phrases.
 
 
 # 2. Machine learning algorithms used in project
@@ -29,7 +29,7 @@ mining applications. SENTIWORDNET is the result of the automatic annotationof al
 
 # 3. Dataset
 
-Data used in this project is collected from the website [http://www.cs.cornell.edu/people/pabo/movie-review-data](www.www.cs.cornell.edu) . For the purpose of this project we used  [http://www.cs.cornell.edu/People/pabo/movie-review-data/review_polarity.tar.gz](polarity_dataset v2.0). All gathered data are programmatically stored in file ["data/movieReviews.arff"](https://github.com/DivnaP/MovieReviewsClassifier/blob/master/data/movieReviews.arff). Some of movie reviews are manually added from  [http://www.metacritic.com/](www.metacritic.com) and then in total, 2158 movie reviews collected.
+Data used in this project is collected from the website [www.www.cs.cornell.edu](http://www.cs.cornell.edu/people/pabo/movie-review-data) . For the purpose of this project we used  [polarity_dataset v2.0](http://www.cs.cornell.edu/People/pabo/movie-review-data/review_polarity.tar.gz). All gathered data are programmatically stored in file ["data/movieReviews.arff"](https://github.com/DivnaP/MovieReviewsClassifier/blob/master/data/movieReviews.arff). Some of movie reviews are manually added from  [www.metacritic.com](http://www.metacritic.com/) and then in total, 2158 movie reviews collected.
 
 
 # 4. Technical realization
@@ -38,11 +38,11 @@ The application is written in Java, with next libraries:<br>
 
 In this project five Weka classes were used: *NaiveBayesMultinomial*,*J48*,*LibSVM*,*Logistic*,*SMO*.
 
-- [https://www.csie.ntu.edu.tw/~cjlin/libsvm/](LIBSVM) is an integrated software for support vector classification. Weka and LibSVM are two efficient software tools for building SVM classifiers. Each one of these two tools has its points of strength and weakness. Weka has a GUI and produces many useful statistics (e.g. confusion matrix, precision, recall, F-measure, and ROC scores). LibSVM runs much faster than Weka SMO and supports several SVM methods (e.g. One-class SVM, nu-SVM, and R-SVM). Weka LibSVM (WLSVM) combines the merits of the two tools. WLSVM can be viewed as an implementation of the LibSVM running under Weka environment.<br>
+- [LIBSVM](https://www.csie.ntu.edu.tw/~cjlin/libsvm/) is an integrated software for support vector classification. Weka and LibSVM are two efficient software tools for building SVM classifiers. Each one of these two tools has its points of strength and weakness. Weka has a GUI and produces many useful statistics (e.g. confusion matrix, precision, recall, F-measure, and ROC scores). LibSVM runs much faster than Weka SMO and supports several SVM methods (e.g. One-class SVM, nu-SVM, and R-SVM). Weka LibSVM (WLSVM) combines the merits of the two tools. WLSVM can be viewed as an implementation of the LibSVM running under Weka environment.<br>
 
-- [http://mvnrepository.com/artifact/com.google.code.gson/gson/2.3.1](GSON) is a Java API, developed by Google, used to convert between Java objects and JSON objects
-- [https://github.com/itext/itextpdf](ITEXT) is an open source library that allows you to create and manipulate PDF documents.
-- [https://hc.apache.org/](Apache HTTPComponents) it's used for API calls to Web Service IDOLOnDemand.The Apache HttpComponents™ project is responsible for creating and maintaining a toolset of low level Java components focused on HTTP and associated protocols. In this project we used httpclient-4.5. jar. httpcore-4.4.1.jar, appache-httpcomponents-httpclient.jar, also [https://commons.apache.org/proper/commons-logging/download_logging.cgi](commons-logging-1.2.jar)
+- [GSON](http://mvnrepository.com/artifact/com.google.code.gson/gson/2.3.1) is a Java API, developed by Google, used to convert between Java objects and JSON objects
+- [ITEXT](https://github.com/itext/itextpdf) is an open source library that allows you to create and manipulate PDF documents.
+- [Apache HTTPComponents](https://hc.apache.org/) it's used for API calls to Web Service IDOLOnDemand.The Apache HttpComponents™ project is responsible for creating and maintaining a toolset of low level Java components focused on HTTP and associated protocols. In this project we used httpclient-4.5. jar. httpcore-4.4.1.jar, appache-httpcomponents-httpclient.jar, also [commons-logging-1.2.jar](https://commons.apache.org/proper/commons-logging/download_logging.cgi)
 
 
 # 5. Analysis
@@ -61,5 +61,3 @@ We have results for 5 different algorithms which are performed on dataset movieR
 [1] Wikipedia, "Logistic_regression", link:https://en.wikipedia.org/wiki/Logistic_regression, last access: 08.10.2015. <br>
 [2] Wikipedia, "Sequential_minimal_optimization", link:https://en.wikipedia.org/wiki/Sequential_minimal_optimization, last access: 08.10.2015.<br>
 [3] UniversityOfMinnesotaDuluth, "Chapter 5", link:http://www.d.umn.edu/~padhy005/Chapter5.html,last access: 08.10.2015. <br>
-[4] Paul Paisitkriangkrai, "Linear Regression and Support Vector Regression", 2012, link:
-http://cs.adelaide.edu.au/~chhshen/teaching/ML_SVR.pdf, last access: 10.07.2015. <br>
