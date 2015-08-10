@@ -1,12 +1,12 @@
 
 # 1. About the project
-The aim of this project is to experiment with different machine learning algorithms to predict the sentiment of movie reviews. For start we collect movie reviews from database on the website [http://www.cs.cornell.edu/people/pabo/movie-review-data](www.www.cs.cornell.edu) and use that data to create dataset file and predict sentiment of specific movie review.
+The aim of this project is to experiment with different machine learning algorithms to predict the sentiment of movie reviews. For start we collect movie reviews from database on the website [www.www.cs.cornell.edu](http://www.cs.cornell.edu/people/pabo/movie-review-data) and use that data to create dataset file and predict sentiment of specific movie review.
 The project uses five different types of prediction models :<br>
--Linear Regression <br>
--Support Vector Machine<br>
--Naive Bayes Multinomial<br>
--J48 Decision tree<br>
--Sequential Minimal Optimization<br>
+- Linear Regression <br>
+- Support Vector Machine<br>
+- Naive Bayes Multinomial<br>
+- J48 Decision tree<br>
+- Sequential Minimal Optimization<br>
 
  Results of the five prediction models are compared in order to find out which method is more suitable for this type of prediction. 
  Beside those five models, aplication provide analyzing of words ih movie reviews using [SentiWordNet](http://sentiwordnet.isti.cnr.it/) lexical resource. Also user have ability to use  [HP IDOL OnDemand](https://www.idolondemand.com/developer/apis/analyzesentiment#overview) Web service which analyzes text and return the sentiment as positive, negative or neutral. It contains a dictionary of positive and negative words of different types, and defines patterns that describe how to combine these words to form positive and negative phrases.
