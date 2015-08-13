@@ -617,12 +617,12 @@ public class MainFrame extends JFrame {
 			HttpClient client = new DefaultHttpClient();
 
 			String[] niz = text.split(" ");
-			String zaSlanje = "";
+			String userReview = "";
 			for (int i = 0; i < niz.length; i++) {
-				zaSlanje += niz[i] + "+";
+				userReview += niz[i] + "+";
 			}
 			HttpGet request = new HttpGet("https://api.idolondemand.com/1/api/sync/analyzesentiment/v1?text="
-					+ zaSlanje + "+&apikey=6996e750-60ec-44a6-8838-c84b716d2dac");
+					+ userReview + "+&apikey=6996e750-60ec-44a6-8838-c84b716d2dac");
 			HttpResponse response;
 			try {
 				response = client.execute(request);

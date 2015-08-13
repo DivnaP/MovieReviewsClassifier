@@ -39,7 +39,13 @@ User can perform training on dataset selecting one of the five classifiers. Afte
 When algorithm learn we applying StringToWordVector with filter stopwords from file ["data/stopWords2.txt"](https://github.com/DivnaP/MovieReviewsClassifier/blob/master/data/stopWords2.txt) which represent list of words that we won't to analyze because there are irelevant for our classification.
 ![Alt text](/images/stopWordsCode.jpg?raw=true "Filter Stopwords")<br>
 When training is done, ["data/model.txt"](https://github.com/DivnaP/MovieReviewsClassifier/blob/master/data/model.txt) file is created.Classification of movie reviews will be based on that model. User have choice to classify movie review with training model or to use SentiWordNet or maybe to call Web service IDOLOnDemand.
-If we use IDOLOnDemand we create HTTP get request with user review. We receive answer in format of JSON object, which will be parsed and represented to user:<br>
+If we want classification based on training application will use method classification (String fileData,String fileModel) of ["Classifier.java"](https://github.com/DivnaP/MovieReviewsClassifier/blob/master/src/rs/fon/is/movieClassification/classification/Classifier.java) class. In this method we first call *load(fileData)* method which loading .txt file for classifying, after that we call *loadModel(fileModel)* which loading model which been created during training, then we must make instance and set attributes and class with method *makeInstance()* <br>
+![Alt text](/images/makeInstance.jpg?raw=true "Make instance method") <br>
+Then we can classify maked instance with method *classify()* <br>
+
+If we use IDOLOnDemand we create HTTP get request with user review and send it:
+![Alt text](/images/getRequest.jpg?raw=true "HTTP get request") <br>
+ We receive answer in format of JSON object, which will be parsed and represented to user:<br>
 ![Alt text](/images/IDOLOnDemandAnswer1.jpg?raw=true "JSONAnswer") ![Alt text](/images/IDOLOnDemandAnswer2.jpg?raw=true "JSONAnswer parth2")<br>
 
 If we use SWN, result of sentiment analysis will be shown in next format:
