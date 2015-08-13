@@ -29,7 +29,8 @@ mining applications. SentiWordNet is the result of the automatic annotationof al
 # 3. 
 ## Creating dataset
 
-Data used in this project is collected from the website [www.cs.cornell.edu](http://www.cs.cornell.edu/people/pabo/movie-review-data). For the purpose of this project we used  [polarity_dataset v2.0](http://www.cs.cornell.edu/People/pabo/movie-review-data/review_polarity.tar.gz). All data from this database are sorted in two folders pos and neg, which represent positive and negative reviews. All reviews from .txt files from these two folders are programmatically stored in file ["data/movieReviews.arff"](https://github.com/DivnaP/MovieReviewsClassifier/blob/master/data/movieReviews.arff) with the help of class ["InsertReviewsToARFF.java"](https://github.com/DivnaP/MovieReviewsClassifier/blob/master/src/rs/fon/is/movieClassification/util/InsertReviewsToARFF.java). Some of movie reviews are manually added from [www.metacritic.com](http://www.metacritic.com/) and then, in total, 2158 movie reviews collected.
+Data used in this project is collected from the website [www.cs.cornell.edu](http://www.cs.cornell.edu/people/pabo/movie-review-data). For the purpose of this project we used  [polarity_dataset v2.0](http://www.cs.cornell.edu/People/pabo/movie-review-data/review_polarity.tar.gz). All data from this database are sorted in two folders pos and neg, which represent positive and negative reviews. All reviews from .txt files from these two folders are programmatically stored in file ["data/movieReviews.arff"](https://github.com/DivnaP/MovieReviewsClassifier/blob/master/data/movieReviews.arff) with the help of class ["InsertReviewsToARFF.java"](https://github.com/DivnaP/MovieReviewsClassifier/blob/master/src/rs/fon/is/movieClassification/util/InsertReviewsToARFF.java). Some of movie reviews are manually added from [www.metacritic.com](http://www.metacritic.com/) and then, in total, 2158 movie reviews collected.<br>
+![Alt text](/images/movieReviews.jpg?raw=true "movieReviews.arff")
 
 ## Train dataset and testing
 User can perform training on dataset selecting one of the five classifiers. After that user can see results of training on screen and he can load or enter review for classification.
@@ -38,7 +39,7 @@ User can perform training on dataset selecting one of the five classifiers. Afte
 When algorithm learn we applying StringToWordVector with filter stopwords from file ["data/stopWords2.txt"](https://github.com/DivnaP/MovieReviewsClassifier/blob/master/data/stopWords2.txt) which represent list of words that we won't to analyze because there are irelevant for our classification.
 ![Alt text](/images/stopWordsCode.jpg?raw=true "Filter Stopwords")<br>
 When training is done, ["data/model.txt"](https://github.com/DivnaP/MovieReviewsClassifier/blob/master/data/model.txt) file is created.Classification of movie reviews will be based on that model. User have choice to classify movie review with training model or to use SentiWordNet or maybe to call Web service IDOLOnDemand.
-If we use IDOLOnDemand we create HTTP get request with user review. We receive answer in format of JSON object, which will be parsed and represented to user:
+If we use IDOLOnDemand we create HTTP get request with user review. We receive answer in format of JSON object, which will be parsed and represented to user:<br>
 ![Alt text](/images/IDOLOnDemandAnswer1.jpg?raw=true "JSONAnswer") ![Alt text](/images/IDOLOnDemandAnswer2.jpg?raw=true "JSONAnswer parth2")<br>
 
 If we use SWN, result of sentiment analysis will be shown in next format:
@@ -55,7 +56,7 @@ In this project five Weka classes were used: *NaiveBayesMultinomial*, *J48*, *Li
 
 - [GSON](http://mvnrepository.com/artifact/com.google.code.gson/gson/2.3.1) is a Java API, developed by Google, used to convert between Java objects and JSON objects.
 
-- [ITEXT](https://github.com/itext/itextpdf) is an open source library that allows you to create and manipulate PDF documents. With this library it's enabled users to see report of the sentiment analzye of movie review in PDF format by clicking on the printer icon.
+- [ITEXT](https://github.com/itext/itextpdf) is an open source library that allows you to create and manipulate PDF documents. With this library is enabled users to see report of the sentiment analysis of movie review in PDF format by clicking on the printer icon.
 
 - [Apache HTTPComponents](https://hc.apache.org/) it's used for API calls to Web Service IDOLOnDemand.The Apache HttpComponents™ project is responsible for creating and maintaining a toolset of low level Java components focused on HTTP and associated protocols. In this project we used httpclient-4.5. jar. httpcore-4.4.1.jar, appache-httpcomponents-httpclient.jar, also [commons-logging-1.2.jar](https://commons.apache.org/proper/commons-logging/download_logging.cgi).
 
