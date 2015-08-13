@@ -45,8 +45,9 @@ If we want classification based on training application will use method *classif
 ![Alt text](/images/makeInstance.jpg?raw=true "Make instance method") <br>
 Then we can classify maked instance with method *classify()* <br>
 
-If we use IDOLOnDemand we create HTTP get request with user review and send it:
+If we use IDOLOnDemand we create HTTP get request with user review and send it:<br>
 ![Alt text](/images/getRequest.jpg?raw=true "HTTP get request") <br>
+
  We receive answer in format of JSON object, which will be parsed and represented to user:<br>
 ![Alt text](/images/IDOLOnDemandAnswer1.jpg?raw=true "JSONAnswer") ![Alt text](/images/IDOLOnDemandAnswer2.jpg?raw=true "JSONAnswer parth2")<br>
 
