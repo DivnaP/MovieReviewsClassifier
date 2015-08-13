@@ -502,7 +502,7 @@ public class MainFrame extends JFrame {
 							else {
 								text = Broker.getInstance().load(fileChosen.getPath());
 
-								Thread reg = new Thread(qoueryIDOL);
+								Thread reg = new Thread(queryIDOL);
 								reg.start();
 							}
 						}
@@ -522,7 +522,7 @@ public class MainFrame extends JFrame {
 							if (klasifikator.contains("+HP")) {
 								text = Broker.getInstance().load("data/review.txt");
 
-								Thread reg = new Thread(qoueryIDOL);
+								Thread reg = new Thread(queryIDOL);
 								reg.start();
 							} else
 								return Broker.getInstance().analyze("data/review.txt", klasifikator);
@@ -608,7 +608,7 @@ public class MainFrame extends JFrame {
 		setLocationRelativeTo(null);
 	}
 
-	Runnable qoueryIDOL = new Runnable() {
+	Runnable queryIDOL = new Runnable() {
 
 		@Override
 		public void run() {
@@ -621,23 +621,22 @@ public class MainFrame extends JFrame {
 			for (int i = 0; i < niz.length; i++) {
 				zaSlanje += niz[i] + "+";
 			}
-			HttpGet request2 = new HttpGet("https://api.idolondemand.com/1/api/sync/analyzesentiment/v1?text="
+			HttpGet request = new HttpGet("https://api.idolondemand.com/1/api/sync/analyzesentiment/v1?text="
 					+ zaSlanje + "+&apikey=6996e750-60ec-44a6-8838-c84b716d2dac");
 			HttpResponse response;
 			try {
-				response = client.execute(request2);
+				response = client.execute(request);
 				BufferedReader rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
 				final StringBuilder builder = new StringBuilder(50);
 				String line = "";
-
 				while ((line = rd.readLine()) != null) {
 
 					builder.append(line);
 
 				}
 
-				final Sentences results = new Gson().fromJson(builder.toString(),
-						Sentences.class);
+				final Sentences results = new Gson().fromJson(builder.toString(),Sentences.class);
+				
 				result = results.toString();
 				System.out.println(results);
 				MainFrame.this.textArea.setText(result);
