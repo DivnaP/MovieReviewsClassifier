@@ -9,7 +9,7 @@ The project uses five different types of prediction models : <br>
 - Sequential Minimal Optimization<br>
 
 Results of the five prediction models are compared in order to find out which method is more suitable for this type of prediction. 
-Beside those five models, aplication provide analyzing of words ih movie reviews using [SentiWordNet](http://sentiwordnet.isti.cnr.it/) lexical resource. Also user have ability to use  [HP IDOL OnDemand](https://www.idolondemand.com/developer/apis/analyzesentiment#overview) Web service.
+Beside those five models, application provide analyzing of words in movie reviews using [SentiWordNet](http://sentiwordnet.isti.cnr.it/) lexical resource. Also user have ability to use [HP IDOL OnDemand](https://www.idolondemand.com/developer/apis/analyzesentiment#overview) Web service.
 
 
 # 2. Machine learning algorithms, resources and services used in project
@@ -24,26 +24,26 @@ Beside those five models, aplication provide analyzing of words ih movie reviews
 
 *J48 Decision tree* is a predictive machine-learning model that decides the target value (dependent variable) of a new sample based on various attribute values of the available data.[3]
 
-*SENTIWORDNET 3.0* is a lexical resource explicitly devised for supporting sentiment classification and opinion mining applications. SentiWordNet is the result of the automatic annotationof all the synsets of WORDNET according to the notions of “positivity”, “negativity”, and “neutrality”. Each synset s is associated to three numerical scores P os(s), Neg(s), and Obj(s) which indicate how positive, negative, and “objective” (i.e., neutral) the terms contained in the synset are. Different senses of the same term may thus have different opinion-related propertie.
+*SENTIWORDNET 3.0* is a lexical resource explicitly devised for supporting sentiment classification and opinion mining applications. SentiWordNet is the result of the automatic annotation of all the synsets of WORDNET according to the notions of “positivity”, “negativity”, and “neutrality”. Each synset s is associated to three numerical scores P os(s), Neg(s), and Obj(s) which indicate how positive, negative, and “objective” (i.e., neutral) the terms contained in the synset are. Different senses of the same term may thus have different opinion-related propertie.
 
 *HP IDOL OnDemand* is Web service which analyzes text and return the sentiment as positive, negative or neutral. It contains a dictionary of positive and negative words of different types, and defines patterns that describe how to combine these words to form positive and negative phrases.
 
 # 3. Solution
 ## Creating dataset
 
-Data used in this project is collected from the website [www.cs.cornell.edu](http://www.cs.cornell.edu/people/pabo/movie-review-data). For the purpose of this project we used  [polarity_dataset v2.0](http://www.cs.cornell.edu/People/pabo/movie-review-data/review_polarity.tar.gz). All data from this database are sorted in two folders pos and neg, which represent positive and negative reviews. All reviews from .txt files from these two folders are programmatically stored in file ["data/movieReviews.arff"](https://github.com/DivnaP/MovieReviewsClassifier/blob/master/data/movieReviews.arff) with the help of class ["InsertReviewsToARFF.java"](https://github.com/DivnaP/MovieReviewsClassifier/blob/master/src/rs/fon/is/movieClassification/util/InsertReviewsToARFF.java). Some of movie reviews are manually added from [www.metacritic.com](http://www.metacritic.com/) and then, in total, 2158 movie reviews collected.<br>
+Data used in this project is collected from the website [www.cs.cornell.edu](http://www.cs.cornell.edu/people/pabo/movie-review-data). For the purpose of this project we used [polarity_dataset v2.0](http://www.cs.cornell.edu/People/pabo/movie-review-data/review_polarity.tar.gz). All data from this database are sorted in two folders *pos* and *neg*, which represent positive and negative reviews. All reviews from .txt files from these two folders are programmatically stored in file ["data/movieReviews.arff"](https://github.com/DivnaP/MovieReviewsClassifier/blob/master/data/movieReviews.arff) with the help of class ["InsertReviewsToARFF.java"](https://github.com/DivnaP/MovieReviewsClassifier/blob/master/src/rs/fon/is/movieClassification/util/InsertReviewsToARFF.java). Some of movie reviews are manually added from [www.metacritic.com](http://www.metacritic.com/) and then, in total, 2158 movie reviews collected.<br>
 ![Alt text](/images/movieReviews.jpg?raw=true "movieReviews.arff")
 
 ## Training dataset and testing
 User can perform training on dataset selecting one of the five classifiers. After that user can see results of training on screen and he can load or enter review for classification.
-![Alt text](/images/formTraining1.jpg?raw=true "Chooseing classifier")
+![Alt text](/images/formTraining1.jpg?raw=true "Choosing classifier")
 ![Alt text](/images/formTraining2.jpg?raw=true "Results of training")<br>
-When algorithm learn we applying StringToWordVector with filter stopwords from file ["data/stopWords2.txt"](https://github.com/DivnaP/MovieReviewsClassifier/blob/master/data/stopWords2.txt) which represent list of words that we won't to analyze because there are irelevant for our classification.
+When algorithm learn we applying StringToWordVector with filter Stopwords from file ["data/stopWords2.txt"](https://github.com/DivnaP/MovieReviewsClassifier/blob/master/data/stopWords2.txt) which represent list of words that we won't to analyze because there are irrelevant for our classification.
 ![Alt text](/images/stopWordsCode.jpg?raw=true "Filter Stopwords")<br>
-When training is done, ["data/model.txt"](https://github.com/DivnaP/MovieReviewsClassifier/blob/master/data/model.txt) file is created.Classification of movie reviews will be based on that model. User have choice to classify movie review with training model or to use SentiWordNet or maybe to call Web service IDOLOnDemand.
+When training is done, ["data/model.txt"](https://github.com/DivnaP/MovieReviewsClassifier/blob/master/data/model.txt) file is created. Classification of movie reviews will be based on that model. User have choice to classify movie review with training model or to use SentiWordNet or maybe to call Web service IDOLOnDemand.
 If we want classification based on training application will use method *classification (String fileData,String fileModel)* of ["Classifier.java"](https://github.com/DivnaP/MovieReviewsClassifier/blob/master/src/rs/fon/is/movieClassification/classification/Classifier.java) class. In this method we first call *load(fileData)* method which loading .txt file for classifying, after that we call *loadModel(fileModel)* which loading model which has been created during training, then we must make instance and set attributes and class with method *makeInstance()* <br>
 ![Alt text](/images/makeInstance.jpg?raw=true "Make instance method") <br>
-Then we can classify maked instance with method *classify()* <br>
+Then we can classify created instance with method *classify()* <br>
 
 If we use IDOLOnDemand we create HTTP get request with user review and send it:<br>
 ![Alt text](/images/getRequest.jpg?raw=true "HTTP get request") <br>
@@ -56,8 +56,8 @@ If we use SWN, result of sentiment analysis will be shown in next format:
 
 # 4. Technical realization
 
-The application is written in Java programming language, with help of next libraries:<br>
-- [Weka library](http://www.cs.waikato.ac.nz/ml/weka/)- Weka is a popular suite of machine learning software written in Java, developed at the University of Waikato, New Zealand. All algorithms that software provide can be used directly from code by importing *weka.jar* file. Weka contains tools for data preprocessing, classification, regression, clustering and visualization.
+The application is written in Java programming language, with help of next libraries :<br>
+- [Weka](http://www.cs.waikato.ac.nz/ml/weka/) is a popular suite of machine learning software written in Java, developed at the University of Waikato, New Zealand. All algorithms that software provide can be used directly from code by importing *weka.jar* file. Weka contains tools for data preprocessing, classification, regression, clustering and visualization.
 
 In this project five Weka classes were used: *NaiveBayesMultinomial*, *J48*, *LibSVM*, *Logistic*, *SMO*.
 
@@ -78,7 +78,7 @@ In this project five Weka classes were used: *NaiveBayesMultinomial*, *J48*, *Li
 We have results for 5 different algorithms which are performed on dataset movieReviews.arff. 
 
 The column *Precision* represent proportion of instances that are truly of a class divided by the total instances classified as that class, column
-*Recall* represent proportion of instances classified as a given class divided by the actual total in that class. And we have a *F-Measure* whitch is a combined measure for precision and recall calculated as 2 * Precision * Recall / (Precision + Recall). Also we have column of correctly classified instances of total 2158. <br>
+*Recall* represent proportion of instances classified as a given class divided by the actual total in that class. And we have a *F-Measure* which is a combined measure for precision and recall calculated as 2 * Precision * Recall / (Precision + Recall). Also we have column of correctly classified instances of total 2158. <br>
 
 As we see best precision have **Sequential minimal optimization** algorithm, which also has best result in recall. After him, best result provides Naive Bayes Multinomial. We have pretty good results but in some cases while testing, application was unable to correctly classify obvious sentiment of movie review. When we use another methods for analyzing sentiment of movie review like SentiWordNet and IDOLONDemand service we have different results.
 
