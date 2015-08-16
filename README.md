@@ -29,14 +29,25 @@ Beside those five models, application provides analysis of words in movie review
 
 # 3. Solution
 ## Movie review dataset
+<<<<<<< HEAD
 
 Dataset used in this project is downloaded from the website [www.cs.cornell.edu](http://www.cs.cornell.edu/people/pabo/movie-review-data), specifically [polarity_dataset v2.0](http://www.cs.cornell.edu/People/pabo/movie-review-data/review_polarity.tar.gz). All data from this dataset are sorted in two folders *pos* and *neg*, which represent positive and negative reviews. In total, there are 1000 positive and 1000 negative reviews. Data from this file is then converted to the appropriate ARFF file stored at ["data/movieReviews.arff"](https://github.com/DivnaP/MovieReviewsClassifier/blob/master/data/movieReviews.arff). Several movie reviews are manually added from [www.metacritic.com](http://www.metacritic.com/) and then, in total, 2158 movie reviews are collected.
 Test dataset is also downloaded from the website [www.cs.cornell.edu](http://www.cs.cornell.edu/people/pabo/movie-review-data), specifically [polarity_dataset v1.1](http://www.cs.cornell.edu/people/pabo/movie-review-data/mix20_rand700_tokens_0211.tar.gz) and converted to ARFF file stored at ["data/movieReviewsTestDataset.arff"](https://github.com/DivnaP/MovieReviewsClassifier/blob/master/data/movieReviewsTestDataset.arff)
 
+=======
+
+Dataset used in this project is downloaded from the website [www.cs.cornell.edu](http://www.cs.cornell.edu/people/pabo/movie-review-data), specifically [polarity_dataset v2.0](http://www.cs.cornell.edu/People/pabo/movie-review-data/review_polarity.tar.gz). All data from this dataset are sorted in two folders *pos* and *neg*, which represent positive and negative reviews. In total, there are 1000 positive and 1000 negative reviews. Data from this file is then converted to the appropriate ARFF file stored at ["data/movieReviews.arff"](https://github.com/DivnaP/MovieReviewsClassifier/blob/master/data/movieReviews.arff). Several movie reviews are manually added from [www.metacritic.com](http://www.metacritic.com/) and then, in total, 2158 movie reviews are collected.
+>>>>>>> origin/master
 ![Alt text](/images/movieReviews.jpg?raw=true "movieReviews.arff")
 ## Training and testing the classifiers
 User can perform training on dataset by using one of the five classifiers. Before the algorithm starts the training, filter StringToWordVector is applied which uses stopwords from the file ["data/stopWords2.txt"](https://github.com/DivnaP/MovieReviewsClassifier/blob/master/data/stopWords2.txt) to exclude words that are irrelevant for the classification process.
 
+<<<<<<< HEAD
+=======
+## Training and testing the classifiers
+User can perform training on dataset by using one of the five classifiers. Before the algorithm starts the training, filter StringToWordVector is applied which uses stopwords from the file ["data/stopWords2.txt"](https://github.com/DivnaP/MovieReviewsClassifier/blob/master/data/stopWords2.txt) to exclude words that are irrelevant for the classification process.
+
+>>>>>>> origin/master
 ![Alt text](/images/stopWordsCode.jpg?raw=true "Filter Stopwords")<br>
 
 After the training has been completed, ["data/model.txt"](https://github.com/DivnaP/MovieReviewsClassifier/blob/master/data/model.txt) file is created that will be used later for movie reviews classification. The results are displayed to the user and he/she can load or enter unclassified review for classification.<br>
@@ -74,7 +85,11 @@ In this project five Weka classes were used: *NaiveBayesMultinomial*, *J48*, *Li
 
 ![Alt text](/images/table1.jpg?raw=true "Classification results") <br>
 
+<<<<<<< HEAD
 This section describes results of 5 different classification algorithms which are performed on the dataset ["data/movieReviewsTestDataset.arff"](https://github.com/DivnaP/MovieReviewsClassifier/blob/master/data/movieReviewsTestDataset.arff). 
+=======
+This section describes results of 5 different classification algorithms which are performed on the dataset ["data/movieReviews.arff"](https://github.com/DivnaP/MovieReviewsClassifier/blob/master/data/movieReviews.arff). 
+>>>>>>> origin/master
 
 The column *Precision* represent proportion of instances that are truly of a class divided by the total instances classified as that class. Column *Recall* represent proportion of instances classified as a given class divided by the actual total in that class. And, there is *F-Measure* which is a combined measure for precision and recall calculated as 
 
@@ -82,9 +97,15 @@ The column *Precision* represent proportion of instances that are truly of a cla
 F-measure = 2 * Precision * Recall / (Precision + Recall)
 ```
 
+<<<<<<< HEAD
 The last column represents the number of correctly classified instances from the total of 1400.
 
 As can be observed from the table, **Naive Bayes Multinomial** algorithm has the best precision rate, which also has the best recall. After that, the best result provides the Support vector machine algorithm. It has pretty good results, but in some cases while testing, application was unable to correctly classify obvious sentiment of a movie review. When another methods for analyzing a sentiment of movie review are used, like SentiWordNet and IDOLONDemand service, different results are achieved.
+=======
+The last column represents the number of correctly classified instances from the total of 2158.
+
+As can be observed from the table, **Sequential minimal optimization** algorithm has the best precision rate, which also has the best recall. After that, the best result provides the Naive Bayes Multinomial algorithm. It has pretty good results, but in some cases while testing, application was unable to correctly classify obvious sentiment of a movie review. When another methods for analyzing a sentiment of movie review are used, like SentiWordNet and IDOLONDemand service, different results are achieved.
+>>>>>>> origin/master
 
 ![Alt text](/images/ClassificationResult1.jpg?raw=true "Classification result when using classification based on training with SMO ")
 ![Alt text](/images/ClassificationResult2.jpg?raw=true "Classification result when using SentiWordNet")

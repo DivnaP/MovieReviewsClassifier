@@ -72,6 +72,7 @@ public class Trainer {
 
 	public void evaluate(String classifyer) {
 		try {
+			trainData.setClassIndex(0);
 			testData.setClassIndex(0);
 			filter = new StringToWordVector();
 			filter.setAttributeIndices("last");
@@ -98,7 +99,7 @@ public class Trainer {
 				break;
 			}
 
-			Evaluation eval = new Evaluation(testData);
+			Evaluation eval = new Evaluation(trainData);
 
 			eval.crossValidateModel(classifier, testData, 4, new Random(1));
 			System.out.println(eval.toSummaryString());
@@ -115,6 +116,7 @@ public class Trainer {
 	public void learn(String typeClassifier) {
 		try {
 			trainData.setClassIndex(0);
+		
 			filter = new StringToWordVector();
 			filter.setAttributeIndices("last");
 			filter.setStopwords(new File("data/stop_words2.txt"));
