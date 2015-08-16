@@ -40,7 +40,7 @@ public class Trainer {
 
 	private String forGUI;
 	private Instances trainData;
-
+	private Instances testData;
 	private StringToWordVector filter;
 
 	private FilteredClassifier classifier;
@@ -57,10 +57,22 @@ public class Trainer {
 			System.out.println("Problem found when reading: " + fileName);
 		}
 	}
+	public void loadTestDataset(String fileName) {
+		try {
+			BufferedReader reader = new BufferedReader(new FileReader(fileName));
+			ArffReader arff = new ArffReader(reader);
+			testData = arff.getData();
+			System.out.println("===== Loaded dataset: " + fileName + " =====");
+			forGUI = "\n ===== Loaded dataset: " + fileName + " =====\n";
+			reader.close();
+		} catch (IOException e) {
+			System.out.println("Problem found when reading: " + fileName);
+		}
+	}
 
 	public void evaluate(String classifyer) {
 		try {
-			trainData.setClassIndex(0);
+			testData.setClassIndex(0);
 			filter = new StringToWordVector();
 			filter.setAttributeIndices("last");
 			filter.setStopwords(new File("data/stop_words2.txt"));
@@ -80,24 +92,21 @@ public class Trainer {
 			case "logistic":
 				classifier.setClassifier(new Logistic());
 				break;
-			case "smo":
-				classifier.setClassifier(new SMO());
-
-				break;
+		
 			default:
 				classifier.setClassifier(new NaiveBayesMultinomial());
 				break;
 			}
 
-			Evaluation eval = new Evaluation(trainData);
+			Evaluation eval = new Evaluation(testData);
 
-			eval.crossValidateModel(classifier, trainData, 4, new Random(1));
+			eval.crossValidateModel(classifier, testData, 4, new Random(1));
 			System.out.println(eval.toSummaryString());
 			System.out.println(eval.toClassDetailsString());
-			System.out.println("===== Evaluating on filtered (training) dataset done =====");
+			System.out.println("===== Evaluating on filtered (test) dataset done =====");
 
 			forGUI += eval.toSummaryString() + "\n\n" + eval.toClassDetailsString()
-					+ "\n ===== Evaluating on filtered (training) dataset done =====";
+					+ "\n ===== Evaluating on filtered (test) dataset done =====";
 		} catch (Exception e) {
 			System.out.println("Problem found when evaluating");
 		}
@@ -131,11 +140,7 @@ public class Trainer {
 				classifier.setClassifier(new Logistic());
 				forGUI += "\n ===== Training with classifier Logistic regression=====";
 				break;
-			case "smo":
-				classifier.setClassifier(new SMO());
-
-				forGUI += "\n ===== Training with classifier Sequential Minimal Optimization=====";
-				break;
+		
 			default:
 				classifier.setClassifier(new NaiveBayesMultinomial());
 				forGUI += "\n ===== Training with classifier Naive Bayes Multinominal=====";
@@ -170,12 +175,14 @@ public class Trainer {
 
 	}
 
-	public String train(String file, String type) {
+	public String train(String trainFile,String testFile,String type) {
 
 		Trainer learner = null;
 		
 			learner = new Trainer();
-			learner.loadDataset(file);
+			learner.loadDataset(trainFile);
+			learner.loadTestDataset(testFile);
+			
 			String typeClassifier = type;
 			learner.evaluate(typeClassifier);
 			learner.learn(typeClassifier);

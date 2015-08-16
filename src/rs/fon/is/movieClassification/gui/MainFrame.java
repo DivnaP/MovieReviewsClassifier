@@ -160,55 +160,6 @@ public class MainFrame extends JFrame {
 			}
 		});
 
-		JMenuItem mntmSmo = new JMenuItem("SMO");
-		mnIzborKlasifikatora.add(mntmSmo);
-
-		mntmSmo.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-
-				final JDialog loading = new JDialog(frame);
-				JPanel p1 = new JPanel(new BorderLayout());
-				p1.setBackground(new Color(255, 255, 255));
-				JLabel jlabel = new JLabel(waitMessage);
-				jlabel.setBackground(new Color(255, 255, 255));
-
-				p1.add(jlabel, BorderLayout.CENTER);
-
-				Icon icon = new ImageIcon(stringWaitPath);
-				JLabel label = new JLabel(icon);
-
-				p1.add(label, BorderLayout.EAST);
-				loading.setUndecorated(true);
-				loading.getContentPane().add(p1);
-				loading.pack();
-				loading.setLocationRelativeTo(frame);
-				loading.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
-				loading.setModal(true);
-
-				SwingWorker<String, Void> worker = new SwingWorker<String, Void>() {
-					@Override
-					protected String doInBackground() {
-
-						return Broker.getInstance().train("smo");
-					}
-
-					@Override
-					protected void done() {
-						loading.dispose();
-					}
-				};
-				worker.execute();
-				loading.setVisible(true);
-				try {
-
-					textArea.setText(worker.get());
-				} catch (Exception e1) {
-					e1.printStackTrace();
-				}
-
-			}
-		});
-
 		JMenuItem mntmJ_1 = new JMenuItem("J48");
 		mnIzborKlasifikatora.add(mntmJ_1);
 		mntmJ_1.addActionListener(new ActionListener() {
@@ -593,7 +544,7 @@ public class MainFrame extends JFrame {
 
 		getContentPane().add(scroll, BorderLayout.CENTER);
 
-		JLabel statusbar = new JLabel("Didi 2015@ Copyright");
+		JLabel statusbar = new JLabel("Movie reviews classifier");
 		statusbar.setPreferredSize(new Dimension(-1, 22));
 		statusbar.setBorder(LineBorder.createGrayLineBorder());
 

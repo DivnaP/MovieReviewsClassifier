@@ -514,10 +514,12 @@ public class SentiWordNetDemo {
 			System.out.println(classifier.classifyADJY());
 			System.out.println(classifier.classifyADJN());	
 			
-		
+	/*	
 		return "===== Classification by all kinds of words ===== \n\n"+" Review is classified as : "+classifier.classifyAllPOSY()+ "\n\n"+
 		"===== Classification by adjectives ===== \n\n"+" Review is classified as : "+classifier.classifyAllPOSY()
 		+"\n\n ===== Classification by nouns ===== \n\n"+" Review is classified as : "+classifier.classifyNounN();
+		*/
+			return classifier.classifyAllPOSY();
 	}
 	
 	private static List<String> readFileLineByLine(File f) {

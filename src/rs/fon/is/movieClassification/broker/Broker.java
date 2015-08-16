@@ -63,9 +63,10 @@ public class Broker {
 	public String train(String type) {
 
 		File file = new File("data/movieReviews.arff");
+		File testFile = new File("data/movieReviewsTestDataset.arff");
 
 		Trainer tr = new Trainer();
-		return tr.train(file.getPath(), type);
+		return tr.train(file.getPath(),testFile.getPath(), type);
 
 	}
 

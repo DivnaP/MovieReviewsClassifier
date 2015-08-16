@@ -56,14 +56,14 @@ public class InsertReviewsToARFF extends JFrame {
 		btNeg.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
-				File folder = new File("C:/Users/Divna/Desktop/txt_sentoken/neg");
+				File folder = new File("C:/Users/Divna/Desktop/tokens/neg");
 				File[] listOfFiles = folder.listFiles();
 
 				for (File file : listOfFiles) {
 					if (file.isFile()) {
 						String name = file.getPath();
 						String text = load(name);
-						write(text, "\n negativeC,'");
+						write(text, "\nnegativeC,'");
 					}
 				}
 			}
@@ -74,14 +74,14 @@ public class InsertReviewsToARFF extends JFrame {
 		btPoz.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
-				File folder = new File("C:/Users/Divna/Desktop/txt_sentoken/pos");
+				File folder = new File("C:/Users/Divna/Desktop/tokens/pos");
 				File[] listOfFiles = folder.listFiles();
 
 				for (File file : listOfFiles) {
 					if (file.isFile()) {
 						String name = file.getPath();
 						String text = load(name);
-						write(text, "\n positiveC,'");
+						write(text, "\npositiveC,'");
 					}
 				}
 			}
@@ -116,7 +116,7 @@ public class InsertReviewsToARFF extends JFrame {
 		
 		BufferedWriter bufferedWriter;
 		try {
-			bufferedWriter = new BufferedWriter(new FileWriter("data/movieReviews.arff", true));
+			bufferedWriter = new BufferedWriter(new FileWriter("data/movieReviewsTestDataset.arff", true));
 
 			bufferedWriter.write(classReview);
 			bufferedWriter.write(text + "'");
