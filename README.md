@@ -5,8 +5,7 @@ The project uses five different types of prediction models:
 - Logistic Regression
 - Support Vector Machine
 - Naive Bayes Multinomial
-- J48 Decision tree
-- Sequential Minimal Optimization<br>
+- J48 Decision tree<br>
 
 Results of the five prediction models are compared in order to find out which method is more suitable for this type of prediction. 
 Beside those five models, application provides analysis of words in movie reviews using [SentiWordNet](http://sentiwordnet.isti.cnr.it/) lexical resource. Also, an user has an option to compare the results of predicion to the result returned by the [HP IDOL OnDemand](https://www.idolondemand.com/developer/apis/analyzesentiment#overview), that is the Sentiment Analysis API which analyzes text to return the sentiment as positive, negative or neutral. It contains a dictionary of positive and negative words of different types, and defines patterns that describe how to combine these words to form positive and negative phrases.
@@ -84,7 +83,7 @@ F-measure = 2 * Precision * Recall / (Precision + Recall)
 
 The last column represents the number of correctly classified instances from the total of 1400.
 
-As can be observed from the table, **Naive Bayes Multinomial** algorithm has the best precision rate, which also has the best recall. After that, the best result provides the Support vector machine algorithm. It has pretty good results, but in some cases while testing, application was unable to correctly classify obvious sentiment of a movie review. When another methods for analyzing a sentiment of movie review are used, like SentiWordNet and IDOLONDemand service, different results are achieved.
+As can be observed from the table, **Naive Bayes Multinomial** algorithm has the best precision rate, which also has the best recall. After that, the best result provides the Support vector machine algorithm. It has pretty good results, but in some cases while testing, application was unable to correctly classify obvious sentiment of a movie review. When another methods for analyzing a sentiment of movie review are used, like SentiWordNet and IDOLONDemand service, different results are achieved.On the other hand SentiWordNet, based on WordNet, have precision rate only 59% and showed up as worst method for classification.
 
 ![Alt text](/images/ClassificationResult1.jpg?raw=true "Classification result when using classification based on training with SMO ")
 ![Alt text](/images/ClassificationResult2.jpg?raw=true "Classification result when using SentiWordNet")
