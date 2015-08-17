@@ -1,7 +1,7 @@
 ﻿
 # 1. About the project
 The aim of this project is to experiment with different machine learning algorithms to predict the sentiment of movie reviews. The prediction was performed on the movie review dataset available on the website [www.cs.cornell.edu](http://www.cs.cornell.edu/people/pabo/movie-review-data).
-The project uses five different types of prediction models:
+The project uses four different types of prediction models:
 - Logistic Regression
 - Support Vector Machine
 - Naive Bayes Multinomial
