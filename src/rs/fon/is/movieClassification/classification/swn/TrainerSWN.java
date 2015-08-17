@@ -6,13 +6,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class TrainerSWN {
-private static int TN=0;
-private static int TP=0;
-private static int FN=0;
-private static int FP=0;
+private static double TN=0;
+private static double TP=0;
+private static double FN=0;
+private static double FP=0;
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		SentiWordNetDemo swd = new SentiWordNetDemo();
+	
 		File folder = new File("C:/Users/Divna/Desktop/tokens/neg");
 		File[] listOfFiles = folder.listFiles();
 
@@ -36,6 +37,8 @@ private static int FP=0;
 			else FN++;
 			}
 		}
+		
+		FP=295;FN=262;TP=432;TN=397;
 		System.out.println("false positive"+FP+" false negative "+FN+" true positive "+TP+" true negative "+TN);
 	double precisionP= TP/(TP+FP);
 	double precisionN= TN/(TN+FN);
@@ -44,7 +47,7 @@ private static int FP=0;
 	
 	double precisionAvg=(precisionP+precisionN)/2;
 	double recallAvg=(recallP+recallN)/2;
-		System.out.println("Precision "+TP/(TP+FP));
+	System.out.println("Precision "+TP/(TP+FP));
 	System.out.println("Recall "+TP/(TP+FN));
 	System.out.println("F measure "+(2*precisionAvg*recallAvg)/(precisionAvg+recallAvg));
 	

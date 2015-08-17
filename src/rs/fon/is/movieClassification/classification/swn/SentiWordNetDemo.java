@@ -508,11 +508,11 @@ public class SentiWordNetDemo {
 			classifier = new SentiWordNetDemo();
 			classifier.load(file);
 			
-		System.out.println(classifier.classifyAllPOSY());
-			System.out.println(classifier.classifyAllPOSN());
+	//	System.out.println(classifier.classifyAllPOSY());
+		//	System.out.println(classifier.classifyAllPOSN());
 		//	System.out.println(classifier.classifyAllPOSN2());
-			System.out.println(classifier.classifyADJY());
-			System.out.println(classifier.classifyADJN());	
+		//	System.out.println(classifier.classifyADJY());
+		//	System.out.println(classifier.classifyADJN());	
 			
 	/*	
 		return "===== Classification by all kinds of words ===== \n\n"+" Review is classified as : "+classifier.classifyAllPOSY()+ "\n\n"+
