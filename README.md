@@ -83,12 +83,7 @@ F-measure = 2 * Precision * Recall / (Precision + Recall)
 
 The last column represents the number of correctly classified instances from the total of 710.
 
-As can be observed from the table, **Naive Bayes Multinomial** algorithm has the best precision rate, which also has the best recall. After that, the best result provides the Support vector machine algorithm. It has pretty good results, but in some cases while testing, application was unable to correctly classify obvious sentiment of a movie review. When another methods for analyzing a sentiment of movie review are used, like SentiWordNet and IDOLONDemand service, different results are achieved.On the other hand SentiWordNet, based on WordNet, have precision rate only 57% and showed up as worst method for classification.
-
-![Alt text](/images/ClassificationResult1.jpg?raw=true "Classification result when using classification based on training with SMO ")
-![Alt text](/images/ClassificationResult2.jpg?raw=true "Classification result when using SentiWordNet")
-![Alt text](/images/ClassificationResult3.jpg?raw=true "Classification result when using HPIDOLOnDemand")
-
+As can be observed from the table, **Naive Bayes Multinomial** algorithm has the best precision rate, which also has the best recall. After that, the best result provides the Support vector machine algorithm. It has pretty good results, but in some cases while testing, application was unable to correctly classify obvious sentiment of a movie review. When another methods for analyzing a sentiment of movie review are used, like SentiWordNet and IDOLONDemand service, different results are achieved.On the other hand SentiWordNet, based on WordNet, have precision rate only 57% and showed up as the worst method for classification.
 
 # 6. References
 
